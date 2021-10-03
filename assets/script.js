@@ -213,17 +213,26 @@ var loadCities = function() {
         cityArr.shift();
     }
 
-    var recentCities = document.querySelector('#recent-cities');
-    var cityListUl = document.createElement('ul');
-    cityListUl.className = 'list-group list-group-flush city-list';
+    var recentCities = document.querySelector("#recent-cities");
+   
+    var cityListUl = document.createElement("ul");
+    
+    cityListUl.className = "list-group list-group-flush city-list";
+    
     recentCities.appendChild(cityListUl);
 
     for (var i = 0; i < cityArr.length; i++) {
-        var cityListItem = document.createElement('button');
-        cityListItem.setAttribute('type', 'button');
-        cityListItem.className = 'list-group-item';
-        cityListItem.setAttribute('value', cityArr[i]);
+        
+        var cityListItem = document.createElement("button");
+        
+        cityListItem.setAttribute("type", "button");
+        
+        cityListItem.className = "list-group-item";
+        
+        cityListItem.setAttribute("value", cityArr[i]);
+        
         cityListItem.textContent = cityArr[i];
+        
         cityListUl.prepend(cityListItem);
     }
 
