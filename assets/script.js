@@ -236,22 +236,26 @@ var loadCities = function() {
         cityListUl.prepend(cityListItem);
     }
 
-    var cityList = document.querySelector('.city-list');
-    cityList.addEventListener('click', selectRecent)
+    var cityList = document.querySelector(".city-list");
+   
+    cityList.addEventListener("click", selectRecent)
 }
 
 var selectRecent = function(event) {
-    var clickedCity = event.target.getAttribute('value');
+    
+    var clickedCity = event.target.getAttribute("value");
 
     getCoords(clickedCity);
 }
 
 loadCities();
-cityBtn.addEventListener('click', formHandler)
 
-// searches for city on ENTER key
-cityInput.addEventListener('keyup', function(event) {
+cityBtn.addEventListener("click", formHandler)
+
+cityInput.addEventListener("keyup", function(event) {
+    
     if (event.keyCode === 13) {
+        
         cityBtn.click();
     }
 });
