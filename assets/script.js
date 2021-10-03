@@ -132,8 +132,10 @@ var currentForecast = function(forecast) {
    
     currentWindEl.textContent = forecast.current["wind_speed"];
 
-    var uviEl = document.querySelector('#current-uvi')
-    var currentUvi = forecast.current['uvi'];
+    var uviEl = document.querySelector("#current-uvi")
+   
+    var currentUvi = forecast.current["uvi"];
+   
     uviEl.textContent = currentUvi;
 
     // styles UV index
