@@ -1,12 +1,12 @@
-var cityInput = document.querySelector('#city-input');
+var cityInput = document.querySelector("#city-input");
 
-var cityBtn = document.querySelector('#search-btn');
+var cityBtn = document.querySelector("#search-btn");
 
-var cityNameEl = document.querySelector('#city-name');
+var cityNameEl = document.querySelector("#city-name");
 
 var cityArr = [];
 
-var apiKey = 'e4ab7318fab329c7de8c4fd9dd5056d7'; ca81024eb5c71bfc3e095c70629c034f
+var apiKey = "e4ab7318fab329c7de8c4fd9dd5056d7"; ca81024eb5c71bfc3e095c70629c034f
 
 var formHandler = function(event) {
     
@@ -14,15 +14,15 @@ var formHandler = function(event) {
         .value
         .trim()
         .toLowerCase()
-        .split(' ')
+        .split(" ")
         .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-        .join(' ');
+        .join(" ");
 
     if (selectedCity) {
         getCoords(selectedCity);
-        cityInput.value = '';
+        cityInput.value = " ";
     } else {
-        alert('Please enter a city!');
+        alert("Please enter a city!");
     };
 };
 
@@ -36,15 +36,15 @@ var getCoords = function(city) {
             
             response.json().then(function(data) {
                 
-                var lon = data.coord['lon'];
+                var lon = data.coord["lon"];
                 
-                var lat = data.coord['lat'];
+                var lat = data.coord["lat"];
                 
                 getCityForecast(city, lon, lat);
 
-                if (document.querySelector('.city-list')) {
+                if (document.querySelector(".city-list")) {
                    
-                    document.querySelector('.city-list').remove();
+                    document.querySelector(".city-list").remove();
                 }
 
                 saveCity(city);
@@ -61,7 +61,7 @@ var getCoords = function(city) {
     
     .catch(function(error) {
         
-        alert('Unable to load weather.');
+        alert("Unable to load weather");
     })
 }
 
