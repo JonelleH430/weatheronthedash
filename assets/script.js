@@ -197,15 +197,19 @@ var saveCity = function(city) {
     localStorage.setItem("cities", JSON.stringify(cityArr));
 }
 
-// loads cities from local storage
 var loadCities = function() {
-    cityArr = JSON.parse(localStorage.getItem('cities'));
+    
+    cityArr = JSON.parse(localStorage.getItem("cities"));
 
     if (!cityArr) {
+       
         cityArr = [];
+       
         return false;
-    } else if (cityArr.length > 5) {
-        // saves only the five most recent cities
+    } 
+    
+    else if (cityArr.length > 5) {
+       
         cityArr.shift();
     }
 
