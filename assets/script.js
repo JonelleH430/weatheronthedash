@@ -182,18 +182,19 @@ var fiveDayForecast = function(forecast) {
     }
 }
 
-// saves cities into local storage
 var saveCity = function(city) {
 
-    // prevents duplicate city from being saved and moves it to end of array
     for (var i = 0; i < cityArr.length; i++) {
+        
         if (city === cityArr[i]) {
+           
             cityArr.splice(i, 1);
         }
     }
 
     cityArr.push(city);
-    localStorage.setItem('cities', JSON.stringify(cityArr));
+    
+    localStorage.setItem("cities", JSON.stringify(cityArr));
 }
 
 // loads cities from local storage
