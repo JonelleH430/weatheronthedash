@@ -55,7 +55,7 @@ var getCoords = function(city) {
         
         else {
            
-            alert(`Error: ${response.statusText}`)
+            alert("Error: Unable to find city")
         }
     })
     
@@ -65,14 +65,16 @@ var getCoords = function(city) {
     })
 }
 
-// uses latitude and longitude to fetch current weather and five-day forecast
 var getCityForecast = function(city, lon, lat) {
-    var oneCallApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&exclude=minutely,hourly,alerts&appid=${apiKey}`;
+    
+    var oneCallApi = "https://api.openweathermap.org/data/2.5/onecall?lat=&lon=&units=imperial&exclude=minutely,hourly,alerts&appid=ca81024eb5c71bfc3e095c70629c034f";
+    
     fetch(oneCallApi).then(function(response) {
+       
         if (response.ok) {
+            
             response.json().then(function(data) {
 
-                // identifies city name in forecast
                 cityNameEl.textContent = `${city} (${moment().format("M/D/YYYY")})`; 
 
                 console.log(data)
