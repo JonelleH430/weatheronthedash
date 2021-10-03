@@ -108,11 +108,11 @@ var currentForecast = function(forecast) {
     
     displayTemp("#current-temp", forecast.current["temp"]);
     
-    displayTemp('#current-feels-like', forecast.current['feels_like']);
+    displayTemp("#current-feels-like", forecast.current["feels_like"]);
     
-    displayTemp('#current-high', forecast.daily[0].temp.max);
+    displayTemp("#current-high", forecast.daily[0].temp.max);
     
-    displayTemp('#current-low', forecast.daily[0].temp.min);
+    displayTemp("#current-low", forecast.daily[0].temp.min);
 
     var currentConditionEl = document.querySelector('#current-condition');
     currentConditionEl.textContent = forecast.current.weather[0].description
