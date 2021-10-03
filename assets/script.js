@@ -114,17 +114,23 @@ var currentForecast = function(forecast) {
     
     displayTemp("#current-low", forecast.daily[0].temp.min);
 
-    var currentConditionEl = document.querySelector('#current-condition');
+    var currentConditionEl = document.querySelector("#current-condition");
+    
     currentConditionEl.textContent = forecast.current.weather[0].description
-        .split(' ')
+       
+        .split(" ")
+        
         .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-        .join(' ');
+        
+        .join(" ");
 
-    var currentHumidityEl = document.querySelector('#current-humidity');
-    currentHumidityEl.textContent = forecast.current['humidity'];
+    var currentHumidityEl = document.querySelector("#current-humidity");
+    
+    currentHumidityEl.textContent = forecast.current["humidity"];
 
-    var currentWindEl = document.querySelector('#current-wind-speed')
-    currentWindEl.textContent = forecast.current['wind_speed'];
+    var currentWindEl = document.querySelector("#current-wind-speed")
+   
+    currentWindEl.textContent = forecast.current["wind_speed"];
 
     var uviEl = document.querySelector('#current-uvi')
     var currentUvi = forecast.current['uvi'];
