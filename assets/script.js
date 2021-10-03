@@ -75,31 +75,35 @@ var getCityForecast = function(city, lon, lat) {
             
             response.json().then(function(data) {
 
-                cityNameEl.textContent = `${city} (${moment().format("M/D/YYYY")})`; 
+                cityNameEl.textContent = "${city} (${moment().format('M/D/YYYY')})"; 
 
                 console.log(data)
 
                 currentForecast(data);
+               
                 fiveDayForecast(data);
             });
         }
     })
 }
 
-// helper function to select HTML element and display rounded temperature
 var displayTemp = function(element, temperature) {
+   
     var tempEl = document.querySelector(element);
+   
     var elementText = Math.round(temperature);
+   
     tempEl.textContent = elementText;
 }
 
-// displays current forecast
 var currentForecast = function(forecast) {
     
     var forecastEl = document.querySelector('.city-forecast');
+    
     forecastEl.classList.remove('hide');
 
     var weatherIconEl = document.querySelector('#today-icon');
+   
     var currentIcon = forecast.current.weather[0].icon;
     weatherIconEl.setAttribute('src', `http://openweathermap.org/img/wn/${currentIcon}.png`);
     weatherIconEl.setAttribute('alt', forecast.current.weather[0].main)
