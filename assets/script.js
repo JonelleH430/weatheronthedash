@@ -98,19 +98,20 @@ var displayTemp = function(element, temperature) {
 
 var currentForecast = function(forecast) {
     
-    var forecastEl = document.querySelector('.city-forecast');
+    var forecastEl = document.querySelector(".city-forecast");
     
-    forecastEl.classList.remove('hide');
+    forecastEl.classList.remove("hide");
 
-    var weatherIconEl = document.querySelector('#today-icon');
+    var weatherIconEl = document.querySelector("#today-icon");
    
     var currentIcon = forecast.current.weather[0].icon;
-    weatherIconEl.setAttribute('src', `http://openweathermap.org/img/wn/${currentIcon}.png`);
-    weatherIconEl.setAttribute('alt', forecast.current.weather[0].main)
-
-    displayTemp('#current-temp', forecast.current['temp']);
+    
+    displayTemp("#current-temp", forecast.current["temp"]);
+    
     displayTemp('#current-feels-like', forecast.current['feels_like']);
+    
     displayTemp('#current-high', forecast.daily[0].temp.max);
+    
     displayTemp('#current-low', forecast.daily[0].temp.min);
 
     var currentConditionEl = document.querySelector('#current-condition');
